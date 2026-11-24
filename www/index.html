@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0d6efd" />
+<title>网络互联技术基础 · 刷题助手</title>
+<meta name="description" content="《网络互联技术基础题库》在线刷题：单选题、多选题、判断题、填空题、简答题，含详细解析、错题本、收藏、题目搜索与随机练习。" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div id="app">
+  <!-- 侧边导航 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">🌐</div>
+      <div>
+        <h1>网络互联技术基础</h1>
+        <p>刷题助手 · <span id="bankSize">0</span> 道题</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#/home" data-route="home"><span>🏠</span>首页</a>
+      <a href="#/practice" data-route="practice"><span>📚</span>顺序练习</a>
+      <a href="#/random" data-route="random"><span>🎲</span>随机练习</a>
+      <a href="#/exam" data-route="exam"><span>⏱️</span>模拟考试</a>
+      <a href="#/wrong" data-route="wrong"><span>❌</span>错题本 <em class="badge" id="wrongBadge">0</em></a>
+      <a href="#/fav" data-route="fav"><span>⭐</span>收藏夹 <em class="badge subtle" id="favBadge">0</em></a>
+      <a href="#/search" data-route="search"><span>🔍</span>题目搜索</a>
+      <a href="#/stats" data-route="stats"><span>📊</span>学习统计</a>
+      <a href="#/settings" data-route="settings"><span>⚙️</span>设置与数据</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="btn ghost small" id="themeBtn" title="切换深/浅色">🌓 主题</button>
+      <p class="muted tiny">本地存储 · 无需登录</p>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" aria-label="菜单">☰</button>
+      <div class="topbar-title" id="topbarTitle">首页</div>
+      <div class="topbar-actions">
+        <span class="pill" id="progressPill">已做 0 / 0</span>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<dialog id="confirmDlg" class="dlg">
+  <form method="dialog">
+    <h3 id="cfmTitle">确认</h3>
+    <p id="cfmText"></p>
+    <div class="dlg-actions">
+      <button class="btn ghost" value="no">取消</button>
+      <button class="btn danger" value="yes">确定</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="assets/questions.js"></script>
+<script src="assets/tags.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/router.js"></script>
+</body>
+</html>
